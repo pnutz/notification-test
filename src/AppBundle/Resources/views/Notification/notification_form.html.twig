@@ -1,0 +1,41 @@
+<form>
+    <table>
+        <tr>
+            <th>ID</th><td id="id-value">{{ id }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>
+                <input id="title-value" type="text" name="title" value="{{ title }}" />
+            </td>
+        </tr>
+        
+        <tr>
+            <th>Message</th>
+            <td>
+                <textarea id="message-value" name="message">{{ message }}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>Valid From</th>
+            <td>
+                <input id="validFrom-value" type="date" name="validFrom" value="{{ validFrom }}" />
+            </td>
+        </tr>
+        <tr>
+            <th>Valid To</th>
+            <td>
+                <input id="validTo-value" type="date" name="validTo" value="{{ validTo }}" />
+            </td>
+        </tr>
+        <tr>
+            <th>Active</th>
+            <td>
+                <input id="active-value" type="checkbox" name="active" {% if active %}checked{% endif %} />
+            </td>
+        </tr>
+        <tr>
+            <th><button id="save-notification" class="button button-green">SAVE</button></th><th></th>
+        </tr>
+    </table>
+</form>

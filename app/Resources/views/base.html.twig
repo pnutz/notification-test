@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Notifications!{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('/css/main.css') }}" type="text/css">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+            <script src="/js/requireConfig.js"></script>
+        {% endblock %}
+    </body>
+</html>

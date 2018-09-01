@@ -1,0 +1,43 @@
+button{
+	background: none;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	-webkit-appearance: none;
+	appearance: none;
+	@include transition-styles;
+}//button
+
+.button{
+	position: relative;
+    font-weight: 500;
+	display: inline-block;
+	min-width: 190px;
+	padding: 10px 34px;
+	font-size: em(16);
+	color: $white !important;
+	text-align: center;
+	border: none;
+	@include prefix(border-radius, 30px, webkit moz ms o);
+	box-sizing: border-box;
+
+	@media only screen and (max-width: $media-x-large) and (min-width: $media-medium){
+		padding-bottom: 7px;
+	}
+
+	&.button-green{
+		background-color: $green !important;
+
+		@include hover{
+			background-color: $dark-green !important;
+		}
+	}
+
+	&.button-blue{
+		background-color: $blue !important;
+
+		@include hover{
+			background-color: $dark-blue !important;
+		}
+	}
+}

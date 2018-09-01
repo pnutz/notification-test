@@ -1,0 +1,22 @@
+$font: 'Montserrat', sans-serif;
+
+$white: #fff;
+$black: #000;
+
+$green: #50C878;
+$dark-green: #00A86B;
+
+$blue: #0080FF;
+$dark-blue: #0E4D92;
+
+$main-transition: all 0.3s ease;
+
+$max-width: 2200px;
+
+$media-x-large: 1400px; // desktop +
+$media-large: 1200px; // small laptop +
+$media-medium: 1050px; // tablet landscape +
+$media-small: 800px; // tablet portrait and phone landscape +
+$media-750: 750px; // for the grid breakpoint right after tablet portraits
+$media-x-small: 600px; // phone portrait and some smaller phone landscapes +
+$media-2x-small: 450px; // small phone portrait

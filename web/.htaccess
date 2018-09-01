@@ -1,0 +1,14 @@
+Order deny,allow
+Allow from all
+satisfy any
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^js/(.*)\.twig$ template_loader.php [L]
+
+    RewriteRule ^js - [L,NC]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ app_dev.php [QSA,L]
+</IfModule>

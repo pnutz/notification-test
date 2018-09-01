@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        <h1>Notification List</h1>
+        <div class="container">
+        </div>
+    </div>
+    <script>
+        window.notifications = JSON.parse('{{ notifications|raw|escape('js') }}');
+    </script>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/js/list.js"></script>
+{% endblock %}

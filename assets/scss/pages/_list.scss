@@ -1,0 +1,17 @@
+#notification-form{
+    max-width: 500px;
+    padding: 25px;
+    margin: 15px;
+	border: 1px solid $black;
+	@include prefix(border-radius, 30px, webkit moz ms o);
+
+    #save-notification{
+        margin-top: 15px;
+    }
+}
+
+#notification-list{
+    tr:first-child th{
+        border-bottom: 1px solid $black;
+    }
+}

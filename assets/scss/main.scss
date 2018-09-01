@@ -1,0 +1,16 @@
+// 'utils' eg. variables, mixin
+@import 'utils/variables';
+@import 'utils/mixins';
+
+// 'base' global styles e.g. typography, reset
+@import 'base/base';
+@import 'base/typography';
+
+// 'components' eg. buttons, etc
+@import 'components/buttons';
+
+// 'layout' eg. header, footer, nav
+@import 'layout/forms';
+
+// 'pages' eg. home, about, contact
+@import 'pages/list';
