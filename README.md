@@ -43,4 +43,6 @@ Ensure grunt is running when making modifications in the project /assets directo
 grunt watch
 ```
 
+A sample sqlite database has been included in the project repository in app/data.
+
 Confirm the **app/data** directory has write permissions and your Symony2 instance has permissions to write to **app/cache** and **app/logs**.
