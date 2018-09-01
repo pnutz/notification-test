@@ -8,7 +8,7 @@ This project tests a developer's ability to read and write clean and maintainabl
 * SCSS
 * Grunt
 
-The goal of this project is to display new notifications to users on the base route of the project. The data structures and methods to adding/editing notifications have already been implemented on the /list route.
+The goal of this project is to display new notifications to users on the base route of the project. The data structures and methods for adding/editing notifications have already been implemented on the **/list** route.
 
 ### Task
 
@@ -18,7 +18,7 @@ The task is to implement the following functionality on the default route of the
 
 ### Prerequisites
 
-* php with php-sqlite3
+* php with the php-sqlite3 module
 * composer
 * npm
 
@@ -42,3 +42,5 @@ Ensure grunt is running when making modifications in the project /assets directo
 ```
 grunt watch
 ```
+
+Confirm the **app/data** directory has write permissions and your Symony2 instance has permissions to write to ***app/cache*** and ***app/logs***.
