@@ -12,7 +12,9 @@ The goal of this project is to display new notifications to users on the base ro
 
 ### Task
 
-The task is to implement the following functionality on the default route of the web application. The front-end Backbone view should poll the server every minute and render any new valid (server time within the valid date range), active notifications to the user. Notifications should display the title and message, with new messages appearing above older ones. The server should track which notifications have been shown to the user through the user session, not displaying any duplicate notifications on page reload. Rendered notifications should be dismissable and fade away on-click. The page styling should be mobile responsive and implemented through SCSS.
+The task is to implement the following functionality on the default route of the web application.
+
+The front-end Backbone view should poll the server every minute and render any new, valid (within the valid date range), active notifications to the user. Notifications should render the title and message, with new notifications appearing above older ones. The server should track which notifications have been shown to the user through the user session, not displaying any previously-rendered notifications on page reload. Rendered notifications should be dismissable and fade away on-click. The page styling should match the existing look and feel of the web application to the developer's best judgement. The page should be mobile responsive and implemented through SCSS. An attempt should be made to understand and re-use the existing codebase.
 
 ## Getting Started
 
