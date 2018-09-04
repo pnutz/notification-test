@@ -1,5 +1,4 @@
 html, body {
-    width: 100%;
     height: 100%;
     margin: 0;
     padding: 0 20px;
@@ -23,6 +22,7 @@ html, body {
 table{
     width: 100%;
     margin: 10px;
+    overflow-x: auto;
 
     th{ text-align: left; }
 
@@ -38,13 +38,13 @@ table{
     @media only screen and (min-width: 2500px){
         min-height: 650px;
     }
-
-    a {
-        margin: 20px 20px 20px 100px;
-    }
 }
 
-.container{
+a {
+    margin-bottom: 20px;
+}
+
+.header, .container{
     max-width: $max-width;
     padding-left: 100px;
     padding-right: 100px;
