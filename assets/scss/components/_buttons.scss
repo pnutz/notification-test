@@ -40,4 +40,12 @@ button{
 			background-color: $dark-blue !important;
 		}
 	}
+
+	&.button-orange{
+		background-color: $orange !important;
+
+		@include hover{
+			background-color: $dark-orange !important;
+		}
+	}
 }

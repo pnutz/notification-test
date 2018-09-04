@@ -31,6 +31,8 @@ table {
   @media only screen and (min-width: 2500px) {
     .wrapper {
       min-height: 650px; } }
+  .wrapper a {
+    margin: 20px 20px 20px 100px; }
 
 .container {
   max-width: 2200px;
@@ -99,6 +101,9 @@ p {
     p {
       font-size: 1em; } }
 
+a {
+  text-decoration: none; }
+
 span {
   color: #000;
   font-weight: 300; }
@@ -145,6 +150,11 @@ button {
     @media only screen and (min-width: 1024px), (hover: hover) {
       .button.button-blue:hover {
         background-color: #0E4D92 !important; } }
+  .button.button-orange {
+    background-color: #F9812A !important; }
+    @media only screen and (min-width: 1024px), (hover: hover) {
+      .button.button-orange:hover {
+        background-color: #8B4000 !important; } }
 
 .form-field-styles, input, textarea {
   position: relative;
