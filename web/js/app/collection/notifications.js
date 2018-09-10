@@ -16,7 +16,7 @@ define([
             }
         },
 
-        initialize: function(options) {
+        initialize: function (models, options) {
             this.mode = options.mode;
         }
     });

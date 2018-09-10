@@ -10,6 +10,15 @@ define([
     App.Views.Notification = Backbone.View.extend({
         template: Twig.twig({ data: template }),
 
+        attributes: function () {
+            var attrs = {};
+
+            attrs['class'] = 'notification-container';
+            attrs['data-cid'] = this.model.cid;
+
+            return attrs;
+        },
+
         initialize: function() {
             this.render();
         },

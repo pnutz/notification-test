@@ -224,4 +224,30 @@ textarea {
 #notification-list tr:first-child th {
   border-bottom: 1px solid #000; }
 
+.notification-box {
+  position: relative;
+  border: 1px solid #000;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 0 0 1rem; }
+  .notification-box .notification-title, .notification-box .notification-message {
+    font-weight: 400;
+    line-height: 1;
+    margin: 0 0 0.25rem; }
+  .notification-box .notification-title {
+    font-size: 1.5rem; }
+  .notification-box .notification-message {
+    font-size: 1rem; }
+  .notification-box .notification-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 2rem;
+    display: block;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.5; }
+    .notification-box .notification-close:hover {
+      opacity: 1; }
+
 /*# sourceMappingURL=main.css.map */

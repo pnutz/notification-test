@@ -3,9 +3,8 @@ require([
     'underscore',
     'app/view/notifications',
 ], function($, _, App) {
-    console.log('notification');
-
     var notifications = new App.Views.Notifications({
-        el: '.container'
+        el: '.container',
+        updateFrequency: 60000
     });
 });

@@ -29,6 +29,11 @@ class NotificationController extends Controller
      * @var \Symfony\Component\Serializer\Serializer
      */
     protected $serializer;
+
+    /**
+     * @var string
+     */
+    protected $SESS_NOTIFICATION_KEY = 'notifications_sent';
     
     public function initialize()
     {
@@ -50,11 +55,25 @@ class NotificationController extends Controller
     {
         $this->initialize();
 
-        $notifications = $this->em->getRepository('AppBundle:Notification')->createQueryBuilder('n')
+        $queryBuilder = $this->em->getRepository('AppBundle:Notification')->createQueryBuilder('n')
             ->where('n.active = true')
             ->andWhere(':now BETWEEN n.validFrom AND n.validTo')
-            ->setParameter('now', new \DateTime())
-            ->getQuery()->getResult();
+            ->setParameter('now', new \DateTime());
+
+        if ($request->query->get('after')) {
+            $queryBuilder->andWhere('n.id > :after')
+                         ->setParameter('after', $request->query->get('after'));
+        }
+
+        $notificationsSent = $this->session->get($this->SESS_NOTIFICATION_KEY);
+        if (is_array($notificationsSent) && count($notificationsSent) > 0) {
+            $queryBuilder->andWhere('n.id NOT IN (:ids)')
+                         ->setParameter('ids', $notificationsSent);
+        }
+
+        $notifications = $queryBuilder->getQuery()->getResult();
+
+        $this->updateNotificationsSent($notifications);
 
         $notifications = $this->serializer->normalize($notifications);
         return new JsonResponse($notifications);
@@ -126,5 +145,28 @@ class NotificationController extends Controller
 
         $notification = $this->serializer->normalize($notification);
         return new JsonResponse($notification);
+    }
+
+    /**
+     * Updates the session notification list
+     *
+     * @param array $notifications
+     */
+    protected function updateNotificationsSent(array $notifications)
+    {
+        $key = $this->SESS_NOTIFICATION_KEY;
+        $currentIds = $this->session->get($key);
+        $newIds = [];
+
+        /** @var Notification $notification */
+        foreach ($notifications as $notification) {
+            $newIds[] = $notification->getId();
+        }
+
+        if (is_array($currentIds)) {
+            $newIds = array_unique(array_merge($newIds, $currentIds));
+        }
+
+        $this->session->set($key, $newIds);
     }
 }

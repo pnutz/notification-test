@@ -15,3 +15,40 @@
         border-bottom: 1px solid $black;
     }
 }
+
+.notification-box {
+    position: relative;
+    border: 1px solid $black;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0 0 1rem;
+
+    .notification-title, .notification-message {
+        font-weight: 400;
+        line-height: 1;
+        margin: 0 0 0.25rem;
+    }
+
+    .notification-title {
+        font-size: 1.5rem;
+    }
+
+    .notification-message {
+        font-size: 1rem;
+    }
+
+    .notification-close {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 2rem;
+        display: block;
+        line-height: 1;
+        cursor: pointer;
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
